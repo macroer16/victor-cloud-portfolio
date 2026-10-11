@@ -1,5 +1,5 @@
 # Victor's Cloud & Software Engineering Portfolio
-A personal portfolio website for a Level 3 Computing student interested in cloud computing, cyber security and software engineering.
+A personal portfolio website for a first-year BSc Computer Science student at the University of Westminster interested in cloud computing, cyber security and software engineering.
 
 ## Includes
 - About me section
