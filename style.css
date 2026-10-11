@@ -98,6 +98,7 @@ section.hero { border-top: 0; }
 .state { font-size: 0.9rem; color: #A9B6C3; }
 .dot { width: 10px; height: 10px; border-radius: 50%; }
 .dot-live { background: #34C27F; box-shadow: 0 0 0 4px rgba(52, 194, 127, 0.18); }
+.dot-demo { background: #9AA3A8; }
 .dot-build { background: #E8A33A; box-shadow: 0 0 0 4px rgba(232, 163, 58, 0.18); }
 .board-note { font-size: 0.85rem; color: #A9B6C3; margin: 14px 0 0; }
 
@@ -126,6 +127,7 @@ section.hero { border-top: 0; }
 .links a { font-weight: 700; }
 .tag { font-size: 0.85rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; }
 .tag-live { background: var(--live-bg); color: var(--live); }
+.tag-demo { background: #ECEEEF; color: #4E5A60; }
 .tag-build { background: var(--build-bg); color: var(--build); }
 
 /* Skills */
