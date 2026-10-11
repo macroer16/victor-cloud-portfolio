@@ -37,16 +37,16 @@
     <aside class="board" aria-label="Project status">
       <p class="board-title">What I'm running</p>
       <ul class="board-list">
+        <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://github.com/macroer16/k8s-gitops-platform">Kubernetes GitOps Platform</a><span class="state">Working</span></li>
         <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://macroer16.github.io/cyber-security-readiness-checker/">Cyber Security Readiness Checker</a><span class="state">Live</span></li>
         <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://macroer16.github.io/employee-access-checklist/">Starters and Leavers Tracker</a><span class="state">Live</span></li>
         <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://macroer16.github.io/number-systems-converter/">How Computers Store Numbers</a><span class="state">Live</span></li>
-        <li><span class="dot dot-demo" aria-hidden="true"></span><a href="https://macroer16.github.io/cloudvault-file-manager/">CloudVault File Manager</a><span class="state">Demo</span></li>
         <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://macroer16.github.io/backup-monitoring-dashboard/">Backup Monitor</a><span class="state">Live</span></li>
         <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://macroer16.github.io/password-generator/">Password Generator</a><span class="state">Live</span></li>
-        <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://github.com/macroer16/uni-deadline-tracker-api">Uni Deadline Tracker API</a><span class="state">Working</span></li>
+        <li><span class="dot dot-live" aria-hidden="true"></span><a href="https://github.com/macroer16/uni-deadline-tracker-api">Due: deadline tracker</a><span class="state">Working</span></li>
         <li><span class="dot dot-build" aria-hidden="true"></span><a href="https://carecircle-self.vercel.app">CareCircle</a><span class="state">Building</span></li>
       </ul>
-      <p class="board-note">Live means it works and you can open it now. Building means it works in parts and I'm still testing it. Demo means it shows the idea but isn't connected to a real service yet.</p>
+      <p class="board-note">Live means it works and you can open it now. Building means it works in parts and I'm still testing it.</p>
     </aside>
   </section>
 
@@ -68,7 +68,17 @@
 
   <section class="projects" id="projects">
     <h2>Projects</h2>
-    <p class="section-intro">Most of these are working tools I use or test properly. Each one says clearly what it does and what it doesn't, and the one demo left is labelled as a demo.</p>
+    <p class="section-intro">Each of these is a working tool, tested in CI. Each one says clearly what it does and what it doesn't.</p>
+
+    <article class="project">
+      <div class="project-head">
+        <h3>Kubernetes GitOps Platform</h3>
+        <span class="tag tag-live">Working</span>
+      </div>
+      <p>A production-style Kubernetes platform managed entirely from Git with ArgoCD. It runs my deadline app with images that are scanned and signed in CI, and the cluster refuses anything unsigned, running as root or without resource limits. HTTPS comes through the Gateway API, only the API can reach the database, the API scales itself under load, and Grafana dashboards and alerts watch it all. Every push builds a fresh cluster in GitHub Actions and tries to break it.</p>
+      <p class="built">Kubernetes, ArgoCD, Helm, Envoy Gateway, cert-manager, Kyverno, Cosign, Sealed Secrets, Prometheus, Grafana, k6, GitHub Actions</p>
+      <p class="links"><a href="https://github.com/macroer16/k8s-gitops-platform">Code on GitHub</a><a href="https://github.com/macroer16/k8s-gitops-platform/tree/e2e-results">Latest test run</a></p>
+    </article>
 
     <article class="project">
       <div class="project-head">
@@ -82,11 +92,11 @@
 
     <article class="project">
       <div class="project-head">
-        <h3>Uni Deadline Tracker API</h3>
+        <h3>Due: deadline tracker</h3>
         <span class="tag tag-live">Working</span>
       </div>
-      <p>A REST API that tracks coursework deadlines by module, labels what's overdue or due soon, and gives each user a private calendar link so deadlines appear in their phone's calendar. Passwords are hashed with Argon2, logins use JWTs, and a dedicated set of tests proves no user can see another user's data. The AWS setup is written in Terraform with a budget alert and keyless deploys from GitHub.</p>
-      <p class="built">Python, FastAPI, SQLAlchemy, PostgreSQL, Docker, Terraform, AWS Lambda and API Gateway, 44 automated tests in GitHub Actions</p>
+      <p>A full-stack app (React, FastAPI, PostgreSQL) that tracks coursework deadlines by module, labels what's overdue or due soon, and gives each user a private calendar link so deadlines appear in their phone's calendar. Passwords are hashed with Argon2, logins use JWTs, and a dedicated set of tests proves no user can see another user's data. The AWS setup is written in Terraform with a budget alert and keyless deploys from GitHub.</p>
+      <p class="built">React, TypeScript, Python, FastAPI, SQLAlchemy, PostgreSQL, Docker, Terraform, 54 automated tests in GitHub Actions</p>
       <p class="links"><a href="https://github.com/macroer16/uni-deadline-tracker-api">Code on GitHub</a></p>
     </article>
 
@@ -132,16 +142,6 @@
 
     <article class="project">
       <div class="project-head">
-        <h3>CloudVault File Manager</h3>
-        <span class="tag tag-demo">Demo</span>
-      </div>
-      <p>A file manager modelled on how Amazon S3 storage and IAM permissions work, with search, delete and a basic security checklist. It's a simulation: it doesn't connect to AWS.</p>
-      <p class="built">HTML, CSS, JavaScript</p>
-      <p class="links"><a href="https://macroer16.github.io/cloudvault-file-manager/">Try it</a><a href="https://github.com/macroer16/cloudvault-file-manager">Code on GitHub</a></p>
-    </article>
-
-    <article class="project">
-      <div class="project-head">
         <h3>Backup Monitor</h3>
         <span class="tag tag-live">Live</span>
       </div>
@@ -166,24 +166,24 @@
     <div class="skills-grid">
       <div>
         <h3>Cloud</h3>
-        <p>AWS: S3, IAM, EC2, VPC, load balancing, CloudWatch, SNS, backups and disaster recovery</p>
+        <p>AWS (Solutions Architect – Associate): Lambda, API Gateway, ECR, IAM, S3, VPC, CloudWatch, SNS. Terraform, Docker, GitHub Actions</p>
       </div>
       <div>
         <h3>Code</h3>
-        <p>Python, JavaScript, HTML and CSS, SQL, React with Vite, Node.js with Express</p>
+        <p>Python (FastAPI, pytest), TypeScript and JavaScript, React, SQL, HTML and CSS, Node.js</p>
       </div>
       <div>
-        <h3>Data</h3>
-        <p>PostgreSQL, Supabase with row-level security, Prisma</p>
+        <h3>Platform</h3>
+        <p>Kubernetes, ArgoCD (GitOps), Helm, Gateway API, cert-manager, Prometheus and Grafana. PostgreSQL, Supabase with row-level security</p>
       </div>
       <div>
         <h3>Security</h3>
-        <p>MFA, least privilege, access reviews, secure onboarding and offboarding</p>
+        <p>Supply-chain security (Cosign signing, SBOMs, Trivy), Kyverno and Pod Security policies, network policies, least privilege, MFA</p>
       </div>
     </div>
     <div class="next">
       <h3>Learning next</h3>
-      <p>Infrastructure as code with Terraform, Docker, automated testing and deployment with GitHub Actions, and Microsoft Azure.</p>
+      <p>Deploying to a managed cloud cluster on Azure, and contributing to open source.</p>
     </div>
   </section>
 
@@ -198,7 +198,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>Projects marked as demos use sample data only. © 2026 Victor Benson</p>
+  <p>© 2026 Victor Benson</p>
 </footer>
 </body>
 </html>
